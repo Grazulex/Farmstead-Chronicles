@@ -14,6 +14,7 @@ var direction : Vector2 = Vector2.ZERO
 @onready var state_machine : PlayerStateMachine = $StateMachine
 
 func _ready():
+	emit_signal("initialize_sprites")
 	state_machine.Initialize(self)
 	pass
 	
