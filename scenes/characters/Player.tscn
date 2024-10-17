@@ -681,7 +681,6 @@ script = ExtResource("1_ysxoa")
 shape = SubResource("CircleShape2D_5h2fy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
 zoom = Vector2(2, 2)
 
 [node name="Skeleton" type="Node2D" parent="."]
@@ -732,3 +731,4 @@ libraries = {
 autoplay = "idle_down"
 
 [connection signal="change_direction_x" from="." to="Skeleton" method="_on_player_change_direction_x"]
+[connection signal="initialize_sprites" from="." to="Skeleton" method="_on_player_initialize_sprites"]

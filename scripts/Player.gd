@@ -1,12 +1,16 @@
 class_name player extends CharacterBody2D
 
 signal change_direction_x
+signal initialize_sprites
 
 @export var speed : int = 100
 var last_direction : Vector2 = Vector2.ZERO
 
 @onready var animation_player = $AnimationPlayer
 @onready var skeleton = $Skeleton
+
+func _ready():
+	emit_signal("initialize_sprites")
 
 func _physics_process(delta):
 	var direction : Vector2 = Vector2.ZERO
