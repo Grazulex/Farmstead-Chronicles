@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cedcsumyu0jo1"]
-
-[ext_resource type="PackedScene" uid="uid://d1jjw2ojkgent" path="res://scenes/characters/Player.tscn" id="1_lyeey"]
-
-[node name="Main" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_lyeey")]
-speed = 20

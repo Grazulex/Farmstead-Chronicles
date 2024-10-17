@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cedcsumyu0jo1"]
+
+[ext_resource type="PackedScene" uid="uid://2l1oymyibom3" path="res://scenes/game/tilemaps/fram_outside.tscn" id="1_7y3qm"]
+[ext_resource type="PackedScene" uid="uid://d1jjw2ojkgent" path="res://scenes/characters/Player.tscn" id="1_u7om5"]
+
+[node name="Playground" type="Node2D"]
+
+[node name="FarmOutside" parent="." instance=ExtResource("1_7y3qm")]
+
+[node name="Player" parent="." instance=ExtResource("1_u7om5")]
