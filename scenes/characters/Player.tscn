@@ -1,14 +1,17 @@
-[gd_scene load_steps=22 format=3 uid="uid://d1jjw2ojkgent"]
+[gd_scene load_steps=25 format=3 uid="uid://d1jjw2ojkgent"]
 
-[ext_resource type="Script" path="res://scripts/Player.gd" id="1_ysxoa"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_samt2"]
 [ext_resource type="Texture2D" uid="uid://bc6tilqd12yq7" path="res://assets/textures/Player/Character/Divided/All Basic Animations/Skins/1.png" id="2_42i4n"]
-[ext_resource type="Script" path="res://scripts/Skeleton.gd" id="2_hpkyp"]
+[ext_resource type="Script" path="res://scripts/player/skeleton.gd" id="2_iafc3"]
 [ext_resource type="Texture2D" uid="uid://d21qsrc1u34yi" path="res://assets/textures/Player/Character/Divided/All Basic Animations/Eyes/Female/Black.png" id="3_exelf"]
 [ext_resource type="Texture2D" uid="uid://bnq7vhcf1j3uj" path="res://assets/textures/Player/Character/Divided/All Basic Animations/Hair/Faty/Black.png" id="4_1exo2"]
 [ext_resource type="Texture2D" uid="uid://bxbbacljlpny0" path="res://assets/textures/Player/Character/Divided/All Basic Animations/ACC/Chicken.png" id="5_38pj7"]
 [ext_resource type="Texture2D" uid="uid://clk5jfyoi0pht" path="res://assets/textures/Player/Character/Divided/All Basic Animations/Clothers/Farm Red.png" id="6_8e16o"]
 [ext_resource type="Texture2D" uid="uid://kijw3cwtsgeu" path="res://assets/textures/Player/Character/Divided/All Basic Animations/Weapons/Hoe/Down.png" id="7_qblo4"]
 [ext_resource type="Texture2D" uid="uid://bkyyjvpcjtoaq" path="res://assets/textures/Player/Character/Divided/All Basic Animations/FX/Stars.png" id="8_3gs2i"]
+[ext_resource type="Script" path="res://scripts/player/player_state_machine.gd" id="10_mlsim"]
+[ext_resource type="Script" path="res://scripts/player/state_idle.gd" id="11_hag6m"]
+[ext_resource type="Script" path="res://scripts/player/state_walk.gd" id="12_3valn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5h2fy"]
 
@@ -675,7 +678,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_ysxoa")
+script = ExtResource("1_samt2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5h2fy")
@@ -684,7 +687,7 @@ shape = SubResource("CircleShape2D_5h2fy")
 zoom = Vector2(2, 2)
 
 [node name="Skeleton" type="Node2D" parent="."]
-script = ExtResource("2_hpkyp")
+script = ExtResource("2_iafc3")
 
 [node name="Body" type="Sprite2D" parent="Skeleton"]
 texture = ExtResource("2_42i4n")
@@ -729,6 +732,15 @@ libraries = {
 "": SubResource("AnimationLibrary_whuhn")
 }
 autoplay = "idle_down"
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("10_mlsim")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("11_hag6m")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("12_3valn")
 
 [connection signal="change_direction_x" from="." to="Skeleton" method="_on_player_change_direction_x"]
 [connection signal="initialize_sprites" from="." to="Skeleton" method="_on_player_initialize_sprites"]

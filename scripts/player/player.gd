@@ -6,29 +6,23 @@ signal direction_changed( new_direction: Vector2 )
 
 const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP ]
 
-@export var speed : float = 100.0
 var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
-var state : String = "idle"
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var skeleton = $Skeleton
+@onready var state_machine : PlayerStateMachine = $StateMachine
 
 func _ready():
-	emit_signal("initialize_sprites")
+	state_machine.Initialize(self)
+	pass
 	
-func _process(delta):
-
+func _process(_delta):
 	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	
-	velocity = direction * speed
-	
-	if set_state() == true || set_direction() == true:
-		update_animation()
-		
 	pass
-func _physics_process(delta):
+	
+func _physics_process(_delta):
 	move_and_slide()
 
 func set_direction() -> bool:
@@ -49,16 +43,8 @@ func set_direction() -> bool:
 		emit_signal("change_direction_x", direction.x)
 	return true
 
-	
-func set_state() -> bool:
-	var new_state : String = "idle" if direction == Vector2.ZERO else "walk"
-	if new_state == state:
-		return false
-	state = new_state
-	return true
-	
-	
-func update_animation() -> void:
+
+func update_animation( state : String ) -> void:
 	animation_player.play(state + "_" + anim_direction())
 	pass
 	
