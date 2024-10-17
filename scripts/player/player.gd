@@ -19,8 +19,10 @@ func _ready():
 	pass
 	
 func _process(_delta):
-	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	direction = Vector2(
+		Input.get_axis("ui_left", "ui_right"),
+		Input.get_axis("ui_up", "ui_down")
+	).normalized()
 	pass
 	
 func _physics_process(_delta):

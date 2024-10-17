@@ -5,6 +5,6 @@
 
 [node name="Playground" type="Node2D"]
 
-[node name="FarmOutside" parent="." instance=ExtResource("1_7y3qm")]
-
 [node name="Player" parent="." instance=ExtResource("1_u7om5")]
+
+[node name="FarmOutside" parent="." instance=ExtResource("1_7y3qm")]

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GlobalLevelManager="*res://scripts/Global/GlobalLevelManager.gd"
 GlobalPlayerManager="*res://scripts/Global/GlobalPlayerManager.gd"
 
 [display]

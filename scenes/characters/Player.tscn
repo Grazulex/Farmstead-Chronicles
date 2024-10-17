@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d1jjw2ojkgent"]
+[gd_scene load_steps=26 format=3 uid="uid://d1jjw2ojkgent"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_samt2"]
 [ext_resource type="Texture2D" uid="uid://bc6tilqd12yq7" path="res://assets/textures/Player/Character/Divided/All Basic Animations/Skins/1.png" id="2_42i4n"]
@@ -12,8 +12,11 @@
 [ext_resource type="Script" path="res://scripts/player/player_state_machine.gd" id="10_mlsim"]
 [ext_resource type="Script" path="res://scripts/player/state_idle.gd" id="11_hag6m"]
 [ext_resource type="Script" path="res://scripts/player/state_walk.gd" id="12_3valn"]
+[ext_resource type="Script" path="res://scripts/player/player_camera.gd" id="13_jaqyi"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5h2fy"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0kyny"]
+radius = 4.0
+height = 8.0
 
 [sub_resource type="Animation" id="Animation_swert"]
 length = 0.001
@@ -679,13 +682,13 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.174533
 script = ExtResource("1_samt2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_5h2fy")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_0kyny")
 
 [node name="Skeleton" type="Node2D" parent="."]
 script = ExtResource("2_iafc3")
@@ -742,6 +745,11 @@ script = ExtResource("11_hag6m")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("12_3valn")
+move_speed = 80.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("13_jaqyi")
 
 [connection signal="change_direction_x" from="." to="Skeleton" method="_on_player_change_direction_x"]
 [connection signal="initialize_sprites" from="." to="Skeleton" method="_on_player_initialize_sprites"]
