@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cedcsumyu0jo1"]
 
-[ext_resource type="PackedScene" uid="uid://2l1oymyibom3" path="res://scenes/game/tilemaps/fram_outside.tscn" id="1_7y3qm"]
+[ext_resource type="PackedScene" uid="uid://2l1oymyibom3" path="res://scenes/game/tilemaps/farm_outside.tscn" id="1_7y3qm"]
 [ext_resource type="PackedScene" uid="uid://d1jjw2ojkgent" path="res://scenes/characters/Player.tscn" id="1_u7om5"]
 [ext_resource type="PackedScene" uid="uid://b0wh0px8d4me6" path="res://scenes/ui/player_hud.tscn" id="3_pn0g2"]
 

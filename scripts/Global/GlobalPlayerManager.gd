@@ -257,4 +257,7 @@ var selected_portrait_hair_color = ""
 var selected_portrait_eye_color = ""
 var selected_portrait_clothe_color = ""
 
-var player_name = ""
+var player_name = "Nina"
+
+var player_stock_wood = 1000
+var player_stock_gold = 2000
