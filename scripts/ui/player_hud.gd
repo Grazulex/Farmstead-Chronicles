@@ -22,4 +22,3 @@ func refresh_stock_wood():
 	
 func refresh_stock_gold():
 	label_gold.text = str(GlobalPlayerManager.player_stock_gold)
-
