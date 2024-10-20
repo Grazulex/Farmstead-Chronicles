@@ -25,7 +25,7 @@ func _on_player_change_direction_x(x : int):
 		clothe.flip_h = true
 		tools.flip_h = true
 		fx.flip_h = true
-	pass # Replace with function body.
+	pass 
 
 
 func _on_player_initialize_sprites():
@@ -41,4 +41,4 @@ func _on_player_initialize_sprites():
 	hood.modulate = GlobalPlayerManager.selected_player_hood_color
 	tools.texture = null
 	fx.texture = null
-	pass # Replace with function body.
+	pass 

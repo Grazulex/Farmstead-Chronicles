@@ -5,13 +5,10 @@ var states : Array [ State ]
 var prev_state : State
 var current_state : State
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	process_mode = Node.PROCESS_MODE_DISABLED
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	ChangeState( current_state.Process( delta ))
 	pass

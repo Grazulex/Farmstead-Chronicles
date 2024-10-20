@@ -18,6 +18,7 @@ texture_margin_bottom = 16.0
 region_rect = Rect2(0, 0, 48, 48)
 
 [node name="PlayerHud" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_ubuar")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -75,34 +76,29 @@ text = "200"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer4" type="PanelContainer" parent="."]
-offset_left = 1010.0
-offset_top = 150.0
-offset_right = 1058.0
-offset_bottom = 198.0
-grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_8hv3s")
-
-[node name="ButtonSettings" type="TextureButton" parent="PanelContainer4"]
-layout_mode = 2
-texture_normal = ExtResource("7_x7qvj")
-stretch_mode = 5
-
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -202.0
 offset_top = 150.0
-offset_right = -152.0
-offset_bottom = 200.0
+offset_right = -112.0
+offset_bottom = 223.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_8hv3s")
 
-[node name="ButtonInventory" type="TextureButton" parent="PanelContainer2"]
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer2"]
+layout_mode = 2
+
+[node name="ButtonInventory" type="TextureButton" parent="PanelContainer2/VSplitContainer"]
 layout_mode = 2
 texture_normal = ExtResource("8_ea2bk")
 stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer2/VSplitContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rtla3")
+text = "(I)nventary"
 
 [node name="PanelContainer3" type="PanelContainer" parent="."]
 anchors_preset = 1
@@ -115,7 +111,18 @@ offset_bottom = 200.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_8hv3s")
 
-[node name="ButtonSettings" type="TextureButton" parent="PanelContainer3"]
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer3"]
+layout_mode = 2
+
+[node name="ButtonSettings" type="TextureButton" parent="PanelContainer3/VSplitContainer"]
 layout_mode = 2
 texture_normal = ExtResource("7_x7qvj")
 stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer3/VSplitContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rtla3")
+theme_override_font_sizes/font_size = 0
+text = "(S)etting"
+
+[connection signal="pressed" from="PanelContainer3/VSplitContainer/ButtonSettings" to="." method="_on_button_settings_pressed"]

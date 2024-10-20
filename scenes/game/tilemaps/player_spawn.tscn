@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://blvh5h08qgtei"]
+
+[ext_resource type="Script" path="res://scripts/player/player_spawn.gd" id="1_2b83j"]
+[ext_resource type="Texture2D" uid="uid://chuwfn54a4wkm" path="res://assets/textures/Player/Character/Premade/Manu/all basic animations.png" id="1_v1edu"]
+
+[node name="PlayerSpawn" type="Node2D"]
+script = ExtResource("1_2b83j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.254902, 1, 0.0980392, 1)
+position = Vector2(0, -10)
+texture = ExtResource("1_v1edu")
+hframes = 12
+vframes = 18
