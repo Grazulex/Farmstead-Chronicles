@@ -5,8 +5,9 @@ extends Node
 @onready var hairs = $Hairs
 @onready var hood = $Hood
 @onready var clothe = $Clothe
-@onready var tools = $Tools
 @onready var fx = $Fx
+@onready var axe_down_side: Sprite2D = $Axe_down_side
+@onready var axe_up: Sprite2D = $Axe_up
 
 func _on_player_change_direction_x(x : int):
 	if x > 0:
@@ -15,7 +16,7 @@ func _on_player_change_direction_x(x : int):
 		hairs.flip_h = false
 		hood.flip_h = false
 		clothe.flip_h = false
-		tools.flip_h = false
+		axe_down_side.flip_h = false
 		fx.flip_h = false
 	else:
 		body.flip_h = true
@@ -23,7 +24,7 @@ func _on_player_change_direction_x(x : int):
 		hairs.flip_h = true
 		hood.flip_h = true
 		clothe.flip_h = true
-		tools.flip_h = true
+		axe_down_side.flip_h = true
 		fx.flip_h = true
 	pass 
 
@@ -39,6 +40,5 @@ func _on_player_initialize_sprites():
 	clothe.modulate = GlobalPlayerManager.selected_player_clothe_color
 	hood.texture = GlobalPlayerManager.player_hoods_collection[GlobalPlayerManager.selected_player_hood]
 	hood.modulate = GlobalPlayerManager.selected_player_hood_color
-	tools.texture = null
 	fx.texture = null
 	pass 

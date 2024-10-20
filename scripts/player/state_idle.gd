@@ -1,6 +1,7 @@
 class_name State_Idle extends State
 
 @onready var walk : State = $"../Walk"
+@onready var axe: State = $"../Axe"
 
 func Enter() -> void:
 	player.update_animation("idle")
@@ -18,7 +19,9 @@ func Process( _delta : float ) -> State:
 func Physics( _delta : float ) -> State:
 	return null
 	
-func HandelInput( _evnet : InputEvent ) -> State:
+func HandelInput( _event : InputEvent ) -> State:
+	if _event.is_action_pressed("axe"):
+		return axe
 	return null	
 
 	
