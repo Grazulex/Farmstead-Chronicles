@@ -42,6 +42,7 @@ func set_direction() -> bool:
 		return false
 	
 	cardinal_direction = new_direction
+	direction_changed.emit( new_direction )
 	if cardinal_direction.x != 0:
 		emit_signal("change_direction_x", direction.x)
 	return true

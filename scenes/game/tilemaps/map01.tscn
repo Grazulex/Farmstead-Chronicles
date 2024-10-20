@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://cel3hebtujgl0"]
+[gd_scene load_steps=48 format=4 uid="uid://cel3hebtujgl0"]
 
 [ext_resource type="Script" path="res://scripts/maps/level.gd" id="1_3f3gj"]
 [ext_resource type="Script" path="res://scripts/maps/tile_map.gd" id="1_udriu"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bxprsvwvp0raq" path="res://assets/textures/Fish/FishPoint.png" id="15_cqou6"]
 [ext_resource type="PackedScene" uid="uid://blvh5h08qgtei" path="res://scenes/game/tilemaps/player_spawn.tscn" id="15_cqymy"]
 [ext_resource type="Texture2D" uid="uid://b76hy4nuyqvj6" path="res://assets/textures/Props/Summer/PropsWater Summer_Stone 32x copiar.png" id="16_246mt"]
+[ext_resource type="PackedScene" uid="uid://sqnn2j5obgp2" path="res://scenes/items/Plant/plant.tscn" id="20_baglx"]
 [ext_resource type="PackedScene" uid="uid://bff4nctashc0j" path="res://scenes/game/level_transition.tscn" id="20_s2jwp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecp4m"]
@@ -1921,6 +1922,9 @@ tile_set = SubResource("TileSet_rslse")
 [node name="Fence" type="TileMapLayer" parent="TailMap"]
 tile_map_data = PackedByteArray("AAAEAPL/AAACAAEAAAAEAPP/AAACAAEAAAAEAPT/AAACAAEAAAAEAPX/AAACAAEAAAAEAPb/AAAAAAQAAAAEAPf/AAACAAEAAAAEAPj/AAACAAEAAAAEAPr/AAACAAIAAAADAPr/AAABAAAAAAAEAPH/AAACAAEAAAACAPr/AAABAAIAAAABAPr/AAABAAIAAAAAAPr/AAABAAIAAAD///r/AAABAAIAAAD+//r/AAABAAIAAAD9//r/AAABAAIAAAD8//r/AAABAAIAAAD7//r/AAABAAIAAAD6//r/AAABAAIAAAD2//r/AAABAAAAAAD5//r/AAABAAIAAAD4//r/AAABAAAAAAD1//r/AAAAAAIAAAD1//n/AAAAAAEAAAD1//j/AAAAAAEAAAD1//b/AAAAAAEAAAD1//X/AAAAAAEAAAD1//T/AAAAAAEAAAD1//P/AAAAAAEAAAD1//L/AAAAAAEAAAD1//H/AAAAAAEAAAAEAPn/AAACAAEAAAA=")
 tile_set = SubResource("TileSet_ubamg")
+
+[node name="Plant" parent="." instance=ExtResource("20_baglx")]
+position = Vector2(-112, 64)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("15_cqymy")]
 position = Vector2(168, 109)
