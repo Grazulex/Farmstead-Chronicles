@@ -6,19 +6,23 @@ extends CanvasLayer
 
 
 func _ready():
-	label_name.text = GlobalPlayerManager.player_name
+	label_name.text = GlobalPlayerManager.player.nickname
 	refresh_stock_gold()
 	refresh_stock_wood()
 	pass
 	
 func _process(_delta):
 	pass
-
-func refresh_stock_wood():
-	label_wood.text = str(GlobalPlayerManager.player_stock_wood)
 	
-func refresh_stock_gold():
-	label_gold.text = str(GlobalPlayerManager.player_stock_gold)
+func update_all() -> void :
+	refresh_stock_gold()
+	refresh_stock_wood()
+
+func refresh_stock_wood() -> void :
+	label_wood.text = str(GlobalPlayerManager.player.wood)
+	
+func refresh_stock_gold() -> void :
+	label_gold.text = str(GlobalPlayerManager.player.gold)
 
 func _on_button_settings_pressed() -> void:
 	PauseMenu.show_pause_menu()

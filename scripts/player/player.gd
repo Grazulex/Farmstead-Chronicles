@@ -13,6 +13,10 @@ var direction : Vector2 = Vector2.ZERO
 @onready var skeleton = $Skeleton
 @onready var state_machine : PlayerStateMachine = $StateMachine
 
+var nickname : String = "Nina"
+var wood : int = 0
+var gold : int = 0
+
 func _ready():
 	emit_signal("initialize_sprites")
 	state_machine.Initialize(self)
@@ -59,3 +63,11 @@ func anim_direction() -> String:
 		return "up"
 	else:
 		return "side"
+		
+func update_wood (delta : int) -> void:
+	wood += delta
+	PlayerHud.refresh_stock_wood()
+
+func update_gold (delta : int) -> void:
+	gold += delta
+	PlayerHud.refresh_stock_gold()
