@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch3wa72jh3w7d"
-path="res://.godot/imported/clouds.png-2d66d2275e786b0be590e20d83aa6916.ctex"
+uid="uid://ce07pn5cg74m0"
+path="res://.godot/imported/tree_fall_animation_sprite_sheet.png-6e821a84716c0c44a24a9cc4b4e0d13e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/clouds.png"
-dest_files=["res://.godot/imported/clouds.png-2d66d2275e786b0be590e20d83aa6916.ctex"]
+source_file="res://assets/textures/Tree/tree_fall_animation_sprite_sheet.png"
+dest_files=["res://.godot/imported/tree_fall_animation_sprite_sheet.png-6e821a84716c0c44a24a9cc4b4e0d13e.ctex"]
 
 [params]
 

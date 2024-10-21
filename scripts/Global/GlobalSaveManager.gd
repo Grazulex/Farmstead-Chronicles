@@ -59,7 +59,9 @@ func update_player_data() -> void:
 	
 func update_scene_path() -> void:
 	var p : String = ""
-	p = get_tree().current_scene.scene_file_path
+	for c in get_tree().root.get_children():
+		if c is Level:
+			p = c.scene_file_path
 	current_save.scene_path = p
 	pass
 	
