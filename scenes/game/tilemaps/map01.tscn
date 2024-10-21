@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://cel3hebtujgl0"]
+[gd_scene load_steps=49 format=4 uid="uid://cel3hebtujgl0"]
 
 [ext_resource type="Script" path="res://scripts/maps/level.gd" id="1_3f3gj"]
 [ext_resource type="Script" path="res://scripts/maps/tile_map.gd" id="1_udriu"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b76hy4nuyqvj6" path="res://assets/textures/Props/Summer/PropsWater Summer_Stone 32x copiar.png" id="16_246mt"]
 [ext_resource type="PackedScene" uid="uid://sqnn2j5obgp2" path="res://scenes/items/Plant/plant.tscn" id="20_baglx"]
 [ext_resource type="PackedScene" uid="uid://bff4nctashc0j" path="res://scenes/game/level_transition.tscn" id="20_s2jwp"]
+[ext_resource type="PackedScene" uid="uid://csmnhrivrntk1" path="res://scenes/items/Stone/stone.tscn" id="21_4afvh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecp4m"]
 texture = ExtResource("2_2bf0t")
@@ -1934,6 +1935,10 @@ position = Vector2(320, -189)
 
 [node name="Plant04" parent="." instance=ExtResource("20_baglx")]
 position = Vector2(131, -140)
+
+[node name="Stone01" parent="." instance=ExtResource("21_4afvh")]
+stock_gold = 50
+region = Rect2(0, 48, 32, 32)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("15_cqymy")]
 position = Vector2(168, 109)

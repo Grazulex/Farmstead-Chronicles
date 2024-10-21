@@ -67,6 +67,7 @@ pickaxe={
 2d_physics/layer_2="PlayerHurt"
 2d_physics/layer_5="Walls"
 2d_physics/layer_9="Wood"
+2d_physics/layer_10="Stone"
 
 [rendering]
 

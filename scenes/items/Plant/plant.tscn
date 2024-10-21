@@ -16,6 +16,7 @@ size = Vector2(22.5, 18.25)
 process_mode = 3
 script = ExtResource("1_1bken")
 wood_sound = ExtResource("4_2l3qb")
+player_state_name = "Axe"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -23)

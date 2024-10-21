@@ -3,6 +3,7 @@ class_name Plant extends Node2D
 @export var damage_to_dead: int = 3
 @export var stock_wood : int = 200
 @export var wood_sound : AudioStream	
+@export var player_state_name : String
 
 @onready var audio : AudioStreamPlayer2D = $Audio/AudioStreamPlayer2D
 @onready var is_cut_data: PersistentDataHandler = $IsCut
@@ -23,7 +24,8 @@ func set_plant_state() -> void:
 	pass
 	
 func TakeDamage ( damage : int ) -> void:
-	if is_cut == false:
+	var player : Player = GlobalPlayerManager.player
+	if is_cut == false && player_state_name == player.state_machine.current_state.name:
 		damage_to_dead -= damage
 		
 		audio.stream = wood_sound
@@ -32,7 +34,7 @@ func TakeDamage ( damage : int ) -> void:
 		
 		await audio.finished
 		
-		if damage_to_dead == 0 && is_cut == false:
+		if damage_to_dead <= 0 && is_cut == false:
 			is_cut = true
 			is_cut_data.set_value()
 			queue_free()	

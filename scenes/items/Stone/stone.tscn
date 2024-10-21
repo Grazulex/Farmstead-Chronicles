@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://csmnhrivrntk1"]
+
+[ext_resource type="Script" path="res://scripts/item/stone.gd" id="1_fim0l"]
+[ext_resource type="Texture2D" uid="uid://dxjpl1h0bfcyf" path="res://assets/textures/Props/Summer/SUMMER Stones copiar.png" id="2_7b0v6"]
+[ext_resource type="AudioStream" uid="uid://blfi888mvs7nb" path="res://assets/audio/pickaxe.wav" id="2_i1f4k"]
+[ext_resource type="PackedScene" uid="uid://dxs2lue3385q1" path="res://scenes/general/HitBox/hit_box.tscn" id="4_palxh"]
+[ext_resource type="PackedScene" uid="uid://pab6smqn7ggf" path="res://scenes/general/PersistentDataHandler/persistent_data_handler.tscn" id="5_mgbya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_et57m"]
+size = Vector2(16, 21.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltg8l"]
+size = Vector2(22.5, 18.25)
+
+[node name="Stone" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_fim0l")
+damage_to_dead = 1
+stock_gold = 20
+stone_sound = ExtResource("2_i1f4k")
+player_state_name = "Pickaxe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7b0v6")
+region_enabled = true
+region_rect = Rect2(0, 48, 32, 32)
+
+[node name="HitBox" parent="." instance=ExtResource("4_palxh")]
+position = Vector2(0, -23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 23)
+shape = SubResource("RectangleShape2D_et57m")
+debug_color = Color(0.620491, 0.53322, 0.0816171, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -23)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 23)
+shape = SubResource("RectangleShape2D_ltg8l")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
+
+[node name="IsBroken" parent="." instance=ExtResource("5_mgbya")]

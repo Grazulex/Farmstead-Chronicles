@@ -14,7 +14,7 @@ var pickaxing: bool = false
 
 func Enter() -> void:
 	player.update_animation("pickaxe")
-	animation_player.animation_finished.connect( EndAxe )
+	animation_player.animation_finished.connect( EndPickaxe )
 	
 	audio.stream = pickaxe_sound
 	audio.pitch_scale = randf_range( 0.9,  1.1 )
@@ -27,7 +27,7 @@ func Enter() -> void:
 	pass
 	
 func Exit() -> void:
-	animation_player.animation_finished.disconnect( EndAxe )
+	animation_player.animation_finished.disconnect( EndPickaxe )
 	pickaxing = false
 	hurt_box.monitoring = false
 	pass
@@ -47,7 +47,7 @@ func Physics( _delta : float ) -> State:
 func HandelInput( _event : InputEvent ) -> State:
 	return null	
 
-func EndAxe( _newAnimName: String ) -> void:
+func EndPickaxe( _newAnimName: String ) -> void:
 	pickaxing = false
 	
 	
