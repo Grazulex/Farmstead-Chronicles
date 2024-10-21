@@ -1923,16 +1923,16 @@ tile_set = SubResource("TileSet_rslse")
 tile_map_data = PackedByteArray("AAAEAPL/AAACAAEAAAAEAPP/AAACAAEAAAAEAPT/AAACAAEAAAAEAPX/AAACAAEAAAAEAPb/AAAAAAQAAAAEAPf/AAACAAEAAAAEAPj/AAACAAEAAAAEAPr/AAACAAIAAAADAPr/AAABAAAAAAAEAPH/AAACAAEAAAACAPr/AAABAAIAAAABAPr/AAABAAIAAAAAAPr/AAABAAIAAAD///r/AAABAAIAAAD+//r/AAABAAIAAAD9//r/AAABAAIAAAD8//r/AAABAAIAAAD7//r/AAABAAIAAAD6//r/AAABAAIAAAD2//r/AAABAAAAAAD5//r/AAABAAIAAAD4//r/AAABAAAAAAD1//r/AAAAAAIAAAD1//n/AAAAAAEAAAD1//j/AAAAAAEAAAD1//b/AAAAAAEAAAD1//X/AAAAAAEAAAD1//T/AAAAAAEAAAD1//P/AAAAAAEAAAD1//L/AAAAAAEAAAD1//H/AAAAAAEAAAAEAPn/AAACAAEAAAA=")
 tile_set = SubResource("TileSet_ubamg")
 
-[node name="Plant" parent="." instance=ExtResource("20_baglx")]
+[node name="Plant01" parent="." instance=ExtResource("20_baglx")]
 position = Vector2(198, -135)
 
-[node name="Plant2" parent="." instance=ExtResource("20_baglx")]
+[node name="Plant02" parent="." instance=ExtResource("20_baglx")]
 position = Vector2(296, -121)
 
-[node name="Plant3" parent="." instance=ExtResource("20_baglx")]
+[node name="Plant03" parent="." instance=ExtResource("20_baglx")]
 position = Vector2(320, -189)
 
-[node name="Plant4" parent="." instance=ExtResource("20_baglx")]
+[node name="Plant04" parent="." instance=ExtResource("20_baglx")]
 position = Vector2(131, -140)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("15_cqymy")]

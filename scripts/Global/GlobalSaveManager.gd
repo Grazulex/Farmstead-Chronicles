@@ -68,3 +68,11 @@ func update_scene_path() -> void:
 	current_save.scene_path = p
 	pass
 	
+func add_persistent_value( value : String ) -> void:
+	if check_persistent_value( value ) == false:
+		current_save.persistence.append( value )
+	pass
+	
+func check_persistent_value (value : String ) -> bool:
+	var p = current_save.persistence as Array
+	return p.has( value )

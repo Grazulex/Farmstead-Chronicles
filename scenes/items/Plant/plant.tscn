@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://sqnn2j5obgp2"]
+[gd_scene load_steps=8 format=3 uid="uid://sqnn2j5obgp2"]
 
 [ext_resource type="Script" path="res://scripts/item/plant.gd" id="1_1bken"]
 [ext_resource type="Texture2D" uid="uid://byoqylxnrabdt" path="res://assets/textures/Tree/Common/Pine Tree copiar.png" id="2_ql76t"]
 [ext_resource type="PackedScene" uid="uid://dxs2lue3385q1" path="res://scenes/general/HitBox/hit_box.tscn" id="3_55ifq"]
 [ext_resource type="AudioStream" uid="uid://dxou6lbmnosed" path="res://assets/audio/Wood_Hit_1.wav" id="4_2l3qb"]
+[ext_resource type="PackedScene" uid="uid://pab6smqn7ggf" path="res://scenes/general/PersistentDataHandler/persistent_data_handler.tscn" id="5_2om2i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_et57m"]
 size = Vector2(16, 21.25)
@@ -12,6 +13,7 @@ size = Vector2(16, 21.25)
 size = Vector2(22.5, 18.25)
 
 [node name="Plant" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_1bken")
 wood_sound = ExtResource("4_2l3qb")
 
@@ -41,3 +43,5 @@ shape = SubResource("RectangleShape2D_ltg8l")
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
+
+[node name="IsCut" parent="." instance=ExtResource("5_2om2i")]
