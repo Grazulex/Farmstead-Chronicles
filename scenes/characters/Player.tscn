@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://scripts/player/state_walk.gd" id="12_3valn"]
 [ext_resource type="Script" path="res://scripts/player/player_camera.gd" id="13_jaqyi"]
 [ext_resource type="Script" path="res://scripts/player/state_axe.gd" id="14_7auyi"]
-[ext_resource type="AudioStream" uid="uid://dxou6lbmnosed" path="res://assets/audio/Wood_Hit_1.wav" id="15_0nge5"]
+[ext_resource type="AudioStream" uid="uid://vaeai0ayocbm" path="res://assets/audio/axe.mp3" id="16_y2i7u"]
 [ext_resource type="PackedScene" uid="uid://ddcuw2u2ncd0d" path="res://scenes/general/HurtBox/hurt_box.tscn" id="18_6qks6"]
 [ext_resource type="Script" path="res://scripts/player/player_interaction_host.gd" id="18_b4bvn"]
 
@@ -1088,7 +1088,7 @@ move_speed = 80.0
 
 [node name="Axe" type="Node" parent="StateMachine"]
 script = ExtResource("14_7auyi")
-axe_sound = ExtResource("15_0nge5")
+axe_sound = ExtResource("16_y2i7u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -7)

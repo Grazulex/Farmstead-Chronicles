@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://sqnn2j5obgp2"]
+[gd_scene load_steps=7 format=3 uid="uid://sqnn2j5obgp2"]
 
 [ext_resource type="Script" path="res://scripts/item/plant.gd" id="1_1bken"]
 [ext_resource type="Texture2D" uid="uid://byoqylxnrabdt" path="res://assets/textures/Tree/Common/Pine Tree copiar.png" id="2_ql76t"]
 [ext_resource type="PackedScene" uid="uid://dxs2lue3385q1" path="res://scenes/general/HitBox/hit_box.tscn" id="3_55ifq"]
+[ext_resource type="AudioStream" uid="uid://dxou6lbmnosed" path="res://assets/audio/Wood_Hit_1.wav" id="4_2l3qb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_et57m"]
+size = Vector2(16, 21.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltg8l"]
-size = Vector2(22.5, 18.5)
+size = Vector2(22.5, 18.25)
 
 [node name="Plant" type="Node2D"]
 script = ExtResource("1_1bken")
+wood_sound = ExtResource("4_2l3qb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -23)
@@ -20,8 +25,9 @@ frame = 6
 position = Vector2(0, -23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, 23)
-shape = SubResource("RectangleShape2D_ltg8l")
+position = Vector2(0, 21.625)
+shape = SubResource("RectangleShape2D_et57m")
+debug_color = Color(0.620491, 0.53322, 0.0816171, 0.42)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, -23)
@@ -29,5 +35,9 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 23)
+position = Vector2(0, 23.125)
 shape = SubResource("RectangleShape2D_ltg8l")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]

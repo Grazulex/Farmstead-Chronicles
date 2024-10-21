@@ -1,6 +1,7 @@
 class_name HurtBox extends Area2D
 
 @export var damage : int = 1
+@onready var audio : AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 
 func _ready() -> void:
 	area_entered.connect( AreaEntered )
@@ -12,5 +13,5 @@ func _process(delta: float) -> void:
 
 func AreaEntered( a : Area2D) -> void:
 	if a is HitBox:
-		a.TakeDamage( damage )
+		a.take_damage( damage )
 	pass

@@ -15,12 +15,15 @@ var axing: bool = false
 func Enter() -> void:
 	player.update_animation("axe")
 	animation_player.animation_finished.connect( EndAxe )
+	
 	audio.stream = axe_sound
 	audio.pitch_scale = randf_range( 0.9,  1.1 )
 	audio.play()
+	
 	axing = true
 	await get_tree().create_timer( 0.075 ).timeout
-	hurt_box.monitoring = true
+	if axing:
+		hurt_box.monitoring = true
 	pass
 	
 func Exit() -> void:
