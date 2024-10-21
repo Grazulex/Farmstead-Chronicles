@@ -4,6 +4,7 @@ class_name State_Walk extends State
 
 @onready var idle : State = $"../Idle"
 @onready var axe : State = $"../Axe"
+@onready var pickaxe: State = $"../Pickaxe"
 
 func Enter() -> void:
 	player.update_animation("walk")
@@ -29,6 +30,8 @@ func Physics( _delta : float ) -> State:
 func HandelInput( _event : InputEvent ) -> State:
 	if _event.is_action_pressed("axe"):
 		return axe
+	if _event.is_action_pressed("pickaxe"):
+		return pickaxe	
 	return null	
 
 	

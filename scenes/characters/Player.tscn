@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://d1jjw2ojkgent"]
+[gd_scene load_steps=43 format=3 uid="uid://d1jjw2ojkgent"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_samt2"]
 [ext_resource type="Texture2D" uid="uid://bc6tilqd12yq7" path="res://assets/textures/Player/Character/Divided/All Basic Animations/Skins/1.png" id="2_42i4n"]
@@ -13,12 +13,16 @@
 [ext_resource type="Texture2D" uid="uid://cse64jgtrxo6l" path="res://assets/textures/Player/Character/Divided/All Basic Animations/Weapons/Axe/Up.png" id="9_u36y6"]
 [ext_resource type="Script" path="res://scripts/player/player_state_machine.gd" id="10_mlsim"]
 [ext_resource type="Script" path="res://scripts/player/state_idle.gd" id="11_hag6m"]
+[ext_resource type="Texture2D" uid="uid://mxmfbs3wuc7t" path="res://assets/textures/Player/Character/Divided/All Basic Animations/Weapons/Pickaxe/Up.png" id="11_q6jbl"]
 [ext_resource type="Script" path="res://scripts/player/state_walk.gd" id="12_3valn"]
+[ext_resource type="Texture2D" uid="uid://88oj0nf4sybl" path="res://assets/textures/Player/Character/Divided/All Basic Animations/Weapons/Pickaxe/Down.png" id="12_6w6mg"]
 [ext_resource type="Script" path="res://scripts/player/player_camera.gd" id="13_jaqyi"]
 [ext_resource type="Script" path="res://scripts/player/state_axe.gd" id="14_7auyi"]
 [ext_resource type="AudioStream" uid="uid://vaeai0ayocbm" path="res://assets/audio/axe.mp3" id="16_y2i7u"]
+[ext_resource type="Script" path="res://scripts/player/state_pickaxe.gd" id="17_81kux"]
 [ext_resource type="PackedScene" uid="uid://ddcuw2u2ncd0d" path="res://scenes/general/HurtBox/hurt_box.tscn" id="18_6qks6"]
 [ext_resource type="Script" path="res://scripts/player/player_interaction_host.gd" id="18_b4bvn"]
+[ext_resource type="AudioStream" uid="uid://blfi888mvs7nb" path="res://assets/audio/pickaxe.wav" id="20_86taq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0kyny"]
 radius = 4.0
@@ -133,6 +137,54 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Pickaxe_down_side:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [36]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Pickaxe_down_side:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Pickaxe_up:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [42]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Pickaxe_up:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_mjum2"]
@@ -984,6 +1036,270 @@ tracks/4/keys = {
 "values": [16, 17, 18, 19]
 }
 
+[sub_resource type="Animation" id="Animation_sej1m"]
+resource_name = "pickaxe_down"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Eyes:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hairs:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Clothe:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hood:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Pickaxe_down_side:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Pickaxe_down_side:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_buae2"]
+resource_name = "pickaxe_up"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [42, 43, 44, 45, 46, 47]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Eyes:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [42, 43, 44, 45, 46, 47]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hairs:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [42, 43, 44, 45, 46, 47]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hood:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [42, 43, 44, 45, 46, 47]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Clothe:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [42, 43, 44, 45, 46, 47]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Pickaxe_up:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [42, 43, 44, 45, 46, 47]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Pickaxe_up:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_6b2dr"]
+resource_name = "pickaxe_side"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Eyes:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hairs:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Clothe:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hood:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Pickaxe_down_side:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Pickaxe_down_side:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_whuhn"]
 _data = {
 "RESET": SubResource("Animation_swert"),
@@ -993,6 +1309,9 @@ _data = {
 "idle_down": SubResource("Animation_naw7n"),
 "idle_side": SubResource("Animation_7us0q"),
 "idle_up": SubResource("Animation_1bdr1"),
+"pickaxe_down": SubResource("Animation_sej1m"),
+"pickaxe_side": SubResource("Animation_6b2dr"),
+"pickaxe_up": SubResource("Animation_buae2"),
 "run_down": SubResource("Animation_uyjyq"),
 "run_side": SubResource("Animation_v5jht"),
 "run_up": SubResource("Animation_is0iq"),
@@ -1064,6 +1383,20 @@ hframes = 12
 vframes = 17
 frame = 78
 
+[node name="Pickaxe_down_side" type="Sprite2D" parent="Skeleton"]
+visible = false
+texture = ExtResource("11_q6jbl")
+hframes = 12
+vframes = 17
+frame = 36
+
+[node name="Pickaxe_up" type="Sprite2D" parent="Skeleton"]
+z_index = -1
+texture = ExtResource("12_6w6mg")
+hframes = 12
+vframes = 17
+frame = 42
+
 [node name="Fx" type="Sprite2D" parent="Skeleton"]
 visible = false
 texture = ExtResource("8_3gs2i")
@@ -1089,6 +1422,10 @@ move_speed = 80.0
 [node name="Axe" type="Node" parent="StateMachine"]
 script = ExtResource("14_7auyi")
 axe_sound = ExtResource("16_y2i7u")
+
+[node name="Pickaxe" type="Node" parent="StateMachine"]
+script = ExtResource("17_81kux")
+pickaxe_sound = ExtResource("20_86taq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -7)

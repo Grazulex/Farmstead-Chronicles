@@ -8,6 +8,8 @@ extends Node
 @onready var fx = $Fx
 @onready var axe_down_side: Sprite2D = $Axe_down_side
 @onready var axe_up: Sprite2D = $Axe_up
+@onready var pickaxe_down_side: Sprite2D = $Pickaxe_down_side
+@onready var pickaxe_up: Sprite2D = $Pickaxe_up
 
 func _on_player_change_direction_x(x : int):
 	if x > 0:
@@ -17,6 +19,7 @@ func _on_player_change_direction_x(x : int):
 		hood.flip_h = false
 		clothe.flip_h = false
 		axe_down_side.flip_h = false
+		pickaxe_down_side.flip_h = false
 		fx.flip_h = false
 	else:
 		body.flip_h = true
@@ -25,6 +28,7 @@ func _on_player_change_direction_x(x : int):
 		hood.flip_h = true
 		clothe.flip_h = true
 		axe_down_side.flip_h = true
+		pickaxe_down_side.flip_h = true
 		fx.flip_h = true
 	pass 
 
