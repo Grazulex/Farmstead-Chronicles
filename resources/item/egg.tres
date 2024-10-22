@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="itemData" load_steps=4 format=3 uid="uid://j30hgwl40hkj"]
+
+[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_rub3v"]
+[ext_resource type="Texture2D" uid="uid://bntx7fx7qrmgt" path="res://assets/items/items-spritesheet.png" id="2_odins"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g214"]
+atlas = ExtResource("2_odins")
+region = Rect2(48, 176, 16, 16)
+
+[resource]
+script = ExtResource("1_rub3v")
+name = "Egg"
+description = "Players can collect eggs from their chickens. These eggs can be sold or traded in nearby villages for goods and coins."
+texture = SubResource("AtlasTexture_2g214")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="itemData" load_steps=4 format=3 uid="uid://c1ltjerem6iie"]
+
+[ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_8iigc"]
+[ext_resource type="Texture2D" uid="uid://d1mmep4p308fm" path="res://assets/items/milk-items.png" id="2_onsw0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4nk6"]
+atlas = ExtResource("2_onsw0")
+region = Rect2(32, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_8iigc")
+name = "Milk"
+description = "Players can collect milk from their cows. This milk can be sold or traded in villages for coins and items, and it’s also essential for raising calves into full-grown cows."
+texture = SubResource("AtlasTexture_s4nk6")
