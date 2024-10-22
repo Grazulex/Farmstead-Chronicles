@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://53q0uvr4jc7j"]
+[gd_scene load_steps=10 format=3 uid="uid://53q0uvr4jc7j"]
 
 [ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_erxhr"]
 [ext_resource type="FontFile" uid="uid://ufo0hj0jkl1o" path="res://assets/fonts/Abaddon Light.ttf" id="2_ngx71"]
 [ext_resource type="FontFile" uid="uid://o7gqnagfnby2" path="res://assets/fonts/Abaddon Bold.ttf" id="3_d6rv0"]
 [ext_resource type="Texture2D" uid="uid://74cqkw1w6i2m" path="res://assets/UI/ALL UI ASSETS on one sheet.png" id="3_laq56"]
+[ext_resource type="Script" path="res://scripts/ui/inventory/inventory_ui.gd" id="4_3mbg2"]
 [ext_resource type="PackedScene" uid="uid://bfh0ljnfhulri" path="res://scenes/inventory/inventory_slot.tscn" id="4_8udw3"]
+[ext_resource type="Resource" uid="uid://c84wbw2dof236" path="res://resources/UI/player_inventory.tres" id="5_fltdf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5tdo"]
 atlas = ExtResource("3_laq56")
@@ -57,6 +59,27 @@ theme_override_fonts/font = ExtResource("3_d6rv0")
 theme_override_font_sizes/font_size = 35
 text = "[ pause ]"
 
+[node name="ItemDescription" type="Label" parent="Control"]
+modulate = Color(1, 1, 1, 0.407843)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -20.0
+offset_right = -162.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_d6rv0")
+theme_override_font_sizes/font_size = 15
+text = "This is a description for a inventory item
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
 layout_mode = 0
 offset_left = 38.0
@@ -68,6 +91,8 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_j8in2")
 [node name="GridContainer" type="GridContainer" parent="Control/PanelContainer"]
 layout_mode = 2
 columns = 5
+script = ExtResource("4_3mbg2")
+data = ExtResource("5_fltdf")
 
 [node name="InventorySlot" parent="Control/PanelContainer/GridContainer" instance=ExtResource("4_8udw3")]
 layout_mode = 2

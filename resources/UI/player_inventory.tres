@@ -17,16 +17,16 @@ script = ExtResource("2_2ij2j")
 item_data = ExtResource("4_kfc35")
 quantity = 50
 
-[sub_resource type="Resource" id="Resource_rkbar"]
-script = ExtResource("2_2ij2j")
-item_data = ExtResource("5_ybka8")
-quantity = 100
-
 [sub_resource type="Resource" id="Resource_fwynu"]
 script = ExtResource("2_2ij2j")
 item_data = ExtResource("6_rew6c")
 quantity = 20
 
+[sub_resource type="Resource" id="Resource_rkbar"]
+script = ExtResource("2_2ij2j")
+item_data = ExtResource("5_ybka8")
+quantity = 100
+
 [resource]
 script = ExtResource("1_65uos")
-slots = Array[ExtResource("2_2ij2j")]([SubResource("Resource_sbush"), SubResource("Resource_5pbc8"), SubResource("Resource_rkbar"), SubResource("Resource_fwynu")])
+slots = Array[ExtResource("2_2ij2j")]([SubResource("Resource_sbush"), SubResource("Resource_5pbc8"), null, null, null, SubResource("Resource_fwynu"), SubResource("Resource_rkbar"), null, null, null])
