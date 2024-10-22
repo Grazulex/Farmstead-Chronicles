@@ -24,6 +24,13 @@ func refresh_stock_wood() -> void :
 func refresh_stock_gold() -> void :
 	label_gold.text = str(GlobalPlayerManager.player.gold)
 
+func refresh_stock_hp() -> void:
+	print("show hp", str(GlobalPlayerManager.player.hp))
+	pass
+	
+func refresh_nickname() -> void:
+	label_name.text = str(GlobalPlayerManager.player.nickname)
+
 func _on_button_settings_pressed() -> void:
 	PauseMenu.show_pause_menu()
 	pass # Replace with function body.

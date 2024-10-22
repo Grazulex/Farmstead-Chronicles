@@ -75,8 +75,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_d6rv0")
 theme_override_font_sizes/font_size = 15
-text = "This is a description for a inventory item
-"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -146,6 +144,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ngx71")
 theme_override_font_sizes/font_size = 35
 text = "Back to game"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4
 
 [connection signal="pressed" from="Control/VBoxContainer/Button_Save" to="." method="_on_button_save_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Button_Back" to="." method="_on_button_back_pressed"]

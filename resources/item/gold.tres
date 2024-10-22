@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="itemData" load_steps=4 format=3 uid="uid://bbj5cvdhw2pxd"]
+[gd_resource type="Resource" script_class="itemData" load_steps=5 format=3 uid="uid://bbj5cvdhw2pxd"]
 
 [ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_bkdvu"]
+[ext_resource type="Script" path="res://scripts/item/item_effects/item_effect.gd" id="1_jjnwn"]
 [ext_resource type="Texture2D" uid="uid://bntx7fx7qrmgt" path="res://assets/items/items-spritesheet.png" id="2_dmduc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cq0vo"]
@@ -12,3 +13,4 @@ script = ExtResource("1_bkdvu")
 name = "Gold"
 description = "Players can find gold by breaking rocks around the farm. This valuable resource can be used to buy goods and equipment in nearby villages."
 texture = SubResource("AtlasTexture_cq0vo")
+effects = Array[ExtResource("1_jjnwn")]([])

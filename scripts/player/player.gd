@@ -14,6 +14,7 @@ var direction : Vector2 = Vector2.ZERO
 @onready var state_machine : PlayerStateMachine = $StateMachine
 
 var nickname : String = "Nina"
+var hp : int = 100
 var wood : int = 0
 var gold : int = 0
 
@@ -64,6 +65,14 @@ func anim_direction() -> String:
 	else:
 		return "side"
 		
+func update_nickname (new_nickname : String) -> void:
+	nickname = new_nickname
+	PlayerHud.refresh_nickname()		
+		
+func update_hp (delta : int) -> void:
+	hp += delta
+	PlayerHud.refresh_stock_hp()
+
 func update_wood (delta : int) -> void:
 	wood += delta
 	PlayerHud.refresh_stock_wood()

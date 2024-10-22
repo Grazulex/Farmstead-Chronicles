@@ -1,7 +1,16 @@
-[gd_resource type="Resource" script_class="itemData" load_steps=4 format=3 uid="uid://c1ltjerem6iie"]
+[gd_resource type="Resource" script_class="itemData" load_steps=8 format=3 uid="uid://c1ltjerem6iie"]
 
 [ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_8iigc"]
+[ext_resource type="Script" path="res://scripts/item/item_effects/item_effect.gd" id="1_xo8i5"]
+[ext_resource type="Script" path="res://scripts/item/item_effects/item_effect_heal.gd" id="2_eev2i"]
 [ext_resource type="Texture2D" uid="uid://d1mmep4p308fm" path="res://assets/items/milk-items.png" id="2_onsw0"]
+[ext_resource type="AudioStream" uid="uid://sgafjbr26e35" path="res://assets/audio/hp-up.wav" id="3_l2kv3"]
+
+[sub_resource type="Resource" id="Resource_732a6"]
+script = ExtResource("2_eev2i")
+heal_amount = 10
+audio = ExtResource("3_l2kv3")
+use_description = ""
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4nk6"]
 atlas = ExtResource("2_onsw0")
@@ -12,3 +21,4 @@ script = ExtResource("1_8iigc")
 name = "Milk"
 description = "Players can collect milk from their cows. This milk can be sold or traded in villages for coins and items, and it’s also essential for raising calves into full-grown cows."
 texture = SubResource("AtlasTexture_s4nk6")
+effects = Array[ExtResource("1_xo8i5")]([SubResource("Resource_732a6")])

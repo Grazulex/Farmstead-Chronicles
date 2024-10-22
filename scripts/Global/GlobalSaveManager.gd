@@ -9,6 +9,7 @@ var current_save : Dictionary = {
 	scene_path = "",
 	player = {
 		nickname = "",
+		hp = 100,
 		gold = 1,
 		wood = 1,
 		pos_x = 0,
@@ -23,6 +24,7 @@ var current_save : Dictionary = {
 func save_game() -> void:
 	update_player_data()
 	update_scene_path()
+	update_item_data()
 	var file := FileAccess.open( SAVE_PATH + "save.sav", FileAccess.WRITE )
 	var save_json = JSON.stringify( current_save )
 	file.store_line( save_json )
@@ -40,8 +42,11 @@ func load_game() -> void:
 	GlobalLevelManager.load_new_level( current_save.scene_path, "", Vector2.ZERO )
 	await GlobalLevelManager.level_load_started
 	GlobalPlayerManager.set_player_position( Vector2( current_save.player.pos_x, current_save.player.pos_y ) )
+	GlobalPlayerManager.INVENTORY_DATA.parse_save_data( current_save.items )
 	
-	GlobalPlayerManager.player.nickname = current_save.player.nickname
+
+	GlobalPlayerManager.set_player_nickname(current_save.player.nickname)
+	GlobalPlayerManager.set_player_healt(current_save.player.hp)
 	GlobalPlayerManager.player.wood = current_save.player.wood
 	GlobalPlayerManager.player.gold = current_save.player.gold
 	
@@ -54,6 +59,7 @@ func load_game() -> void:
 func update_player_data() -> void:
 	var p : Player	 = GlobalPlayerManager.player
 	current_save.player.nickname = p.nickname
+	current_save.player.hp = p.hp
 	current_save.player.gold = p.gold
 	current_save.player.wood = p.wood
 	current_save.player.pos_x = p.global_position.x
@@ -76,3 +82,7 @@ func add_persistent_value( value : String ) -> void:
 func check_persistent_value (value : String ) -> bool:
 	var p = current_save.persistence as Array
 	return p.has( value )
+
+func update_item_data() -> void:
+	current_save.items = GlobalPlayerManager.INVENTORY_DATA.get_save_data()
+	pass

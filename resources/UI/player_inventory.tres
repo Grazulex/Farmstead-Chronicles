@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="InventoryData" load_steps=3 format=3 uid="uid://c84wbw2dof236"]
 
 [ext_resource type="Script" path="res://scripts/ui/inventory/inventory_data.gd" id="1_65uos"]
-[ext_resource type="Script" path="res://scripts/ui/inventory/slot_data.gd" id="2_2ij2j"]
+[ext_resource type="Script" path="res://scripts/ui/inventory/slot_data.gd" id="2_77ie3"]
 
 [resource]
 script = ExtResource("1_65uos")
-slots = Array[ExtResource("2_2ij2j")]([null, null, null, null, null, null, null, null, null, null])
+slots = Array[ExtResource("2_77ie3")]([null, null, null, null, null, null, null, null, null, null])
