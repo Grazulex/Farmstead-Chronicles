@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://cel3hebtujgl0"]
+[gd_scene load_steps=54 format=4 uid="uid://cel3hebtujgl0"]
 
 [ext_resource type="Script" path="res://scripts/maps/level.gd" id="1_3f3gj"]
 [ext_resource type="Script" path="res://scripts/maps/tile_map.gd" id="1_udriu"]
@@ -23,6 +23,11 @@
 [ext_resource type="PackedScene" uid="uid://sqnn2j5obgp2" path="res://scenes/items/Plant/plant.tscn" id="20_baglx"]
 [ext_resource type="PackedScene" uid="uid://bff4nctashc0j" path="res://scenes/game/level_transition.tscn" id="20_s2jwp"]
 [ext_resource type="PackedScene" uid="uid://csmnhrivrntk1" path="res://scenes/items/Stone/stone.tscn" id="21_4afvh"]
+[ext_resource type="PackedScene" uid="uid://cu636c2y0m67g" path="res://scenes/items/item_pickup/item_pickup.tscn" id="24_wudvg"]
+[ext_resource type="Resource" uid="uid://bbj5cvdhw2pxd" path="res://resources/item/gold.tres" id="25_gwcer"]
+[ext_resource type="Resource" uid="uid://j30hgwl40hkj" path="res://resources/item/egg.tres" id="26_vsimf"]
+[ext_resource type="Resource" uid="uid://c1ltjerem6iie" path="res://resources/item/milk.tres" id="27_hdduv"]
+[ext_resource type="Resource" uid="uid://b0f4w4mko5tbq" path="res://resources/item/wood.tres" id="28_5pawu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecp4m"]
 texture = ExtResource("2_2bf0t")
@@ -1924,6 +1929,10 @@ tile_set = SubResource("TileSet_rslse")
 tile_map_data = PackedByteArray("AAAEAPL/AAACAAEAAAAEAPP/AAACAAEAAAAEAPT/AAACAAEAAAAEAPX/AAACAAEAAAAEAPb/AAAAAAQAAAAEAPf/AAACAAEAAAAEAPj/AAACAAEAAAAEAPr/AAACAAIAAAADAPr/AAABAAAAAAAEAPH/AAACAAEAAAACAPr/AAABAAIAAAABAPr/AAABAAIAAAAAAPr/AAABAAIAAAD///r/AAABAAIAAAD+//r/AAABAAIAAAD9//r/AAABAAIAAAD8//r/AAABAAIAAAD7//r/AAABAAIAAAD6//r/AAABAAIAAAD2//r/AAABAAAAAAD5//r/AAABAAIAAAD4//r/AAABAAAAAAD1//r/AAAAAAIAAAD1//n/AAAAAAEAAAD1//j/AAAAAAEAAAD1//b/AAAAAAEAAAD1//X/AAAAAAEAAAD1//T/AAAAAAEAAAD1//P/AAAAAAEAAAD1//L/AAAAAAEAAAD1//H/AAAAAAEAAAAEAPn/AAACAAEAAAA=")
 tile_set = SubResource("TileSet_ubamg")
 
+[node name="ItemPickup4" parent="." instance=ExtResource("24_wudvg")]
+position = Vector2(370, -194)
+item_data = ExtResource("28_5pawu")
+
 [node name="Plant01" parent="." instance=ExtResource("20_baglx")]
 position = Vector2(198, -135)
 
@@ -1947,3 +1956,15 @@ position = Vector2(168, 109)
 position = Vector2(-472, 16)
 level = "res://scenes/game/tilemaps/map02.tscn"
 size = 3
+
+[node name="ItemPickup" parent="." instance=ExtResource("24_wudvg")]
+position = Vector2(280, 69)
+item_data = ExtResource("25_gwcer")
+
+[node name="ItemPickup2" parent="." instance=ExtResource("24_wudvg")]
+position = Vector2(-160, -105)
+item_data = ExtResource("26_vsimf")
+
+[node name="ItemPickup3" parent="." instance=ExtResource("24_wudvg")]
+position = Vector2(-55, 217)
+item_data = ExtResource("27_hdduv")
