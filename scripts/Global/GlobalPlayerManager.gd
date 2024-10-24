@@ -278,8 +278,9 @@ func set_player_position ( _new_pos : Vector2 ) -> void:
 	player.global_position = _new_pos
 	pass
 	
-func set_player_healt ( heal : int ) -> void:
+func set_player_healt ( heal : int, max_healt : int ) -> void:
 	player.hp = heal
+	player.max_hp = max_healt
 	pass
 	
 func set_player_nickname (nickname : String) -> void:

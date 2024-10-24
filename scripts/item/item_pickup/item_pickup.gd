@@ -22,7 +22,6 @@ func _ready() -> void:
 	
 func set_item_state() -> void:
 	is_use = is_use_data.value
-	print(is_use)
 	if is_use == true:
 		queue_free()
 	pass

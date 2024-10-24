@@ -1,128 +1,108 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0wh0px8d4me6"]
+[gd_scene load_steps=3 format=3 uid="uid://b0wh0px8d4me6"]
 
-[ext_resource type="Texture2D" uid="uid://lkqcsa6llpqy" path="res://assets/UI/0.2.png" id="1_23h6e"]
 [ext_resource type="Script" path="res://scripts/ui/player_hud.gd" id="1_ubuar"]
-[ext_resource type="Texture2D" uid="uid://dlh1kgyvo7qii" path="res://assets/icones/wood.tres" id="2_8rvtl"]
-[ext_resource type="Texture2D" uid="uid://dwi0ejs5otrsh" path="res://assets/icones/gold.tres" id="3_4udaa"]
-[ext_resource type="FontFile" uid="uid://cnrqk38ddqqwy" path="res://assets/fonts/m5x7.ttf" id="3_rtla3"]
-[ext_resource type="FontFile" uid="uid://o7gqnagfnby2" path="res://assets/fonts/Abaddon Bold.ttf" id="5_amohr"]
-[ext_resource type="Texture2D" uid="uid://dp6ctgcy3uf8x" path="res://assets/icones/settings.tres" id="7_x7qvj"]
-[ext_resource type="Texture2D" uid="uid://4imkv6lfjumc" path="res://assets/icones/inventory.tres" id="8_ea2bk"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8hv3s"]
-texture = ExtResource("1_23h6e")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-region_rect = Rect2(0, 0, 48, 48)
+[ext_resource type="PackedScene" uid="uid://fgqyerup4put" path="res://scenes/ui/heart_gui.tscn" id="3_n022l"]
 
 [node name="PlayerHud" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_ubuar")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -202.0
-offset_top = 10.0
-offset_right = -32.0
-offset_bottom = 145.0
-grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_8hv3s")
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer"]
-layout_mode = 2
-
-[node name="LabelName" type="Label" parent="PanelContainer/VSplitContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_amohr")
-theme_override_font_sizes/font_size = 30
+[node name="LabelName" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 961.0
+offset_top = 11.0
+offset_right = 1001.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 22
 text = "Nina"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/VSplitContainer"]
-layout_mode = 2
-columns = 2
+[node name="HFlowContainer" type="HFlowContainer" parent="Control"]
+layout_mode = 0
+offset_left = 889.0
+offset_top = 35.0
+offset_right = 1089.0
+offset_bottom = 172.0
+theme_override_constants/h_separation = -2
+theme_override_constants/v_separation = -2
+alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VSplitContainer/GridContainer"]
-layout_mode = 2
-texture = ExtResource("2_8rvtl")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="LabelWood" type="Label" parent="PanelContainer/VSplitContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("3_rtla3")
-theme_override_font_sizes/font_size = 32
-text = "100"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VSplitContainer/GridContainer"]
-layout_mode = 2
-texture = ExtResource("3_4udaa")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="LabelGold" type="Label" parent="PanelContainer/VSplitContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("3_rtla3")
-theme_override_font_sizes/font_size = 32
-text = "200"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PanelContainer2" type="PanelContainer" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -202.0
-offset_top = 150.0
-offset_right = -112.0
-offset_bottom = 223.0
-grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_8hv3s")
-
-[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer2"]
+[node name="Heart" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
 layout_mode = 2
 
-[node name="ButtonInventory" type="TextureButton" parent="PanelContainer2/VSplitContainer"]
-layout_mode = 2
-texture_normal = ExtResource("8_ea2bk")
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="PanelContainer2/VSplitContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_rtla3")
-text = "(I)nventary"
-
-[node name="PanelContainer3" type="PanelContainer" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -82.0
-offset_top = 150.0
-offset_right = -32.0
-offset_bottom = 200.0
-grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_8hv3s")
-
-[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer3"]
+[node name="Heart2" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
 layout_mode = 2
 
-[node name="ButtonSettings" type="TextureButton" parent="PanelContainer3/VSplitContainer"]
+[node name="Heart3" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
 layout_mode = 2
-texture_normal = ExtResource("7_x7qvj")
-stretch_mode = 5
 
-[node name="Label" type="Label" parent="PanelContainer3/VSplitContainer"]
+[node name="Heart4" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_rtla3")
-theme_override_font_sizes/font_size = 0
-text = "(S)etting"
 
-[connection signal="pressed" from="PanelContainer3/VSplitContainer/ButtonSettings" to="." method="_on_button_settings_pressed"]
+[node name="Heart5" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart6" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart7" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart8" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart9" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart10" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart11" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart12" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart13" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart14" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart15" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart16" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart17" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart18" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart19" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart20" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart21" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart22" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart23" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2
+
+[node name="Heart24" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
+layout_mode = 2

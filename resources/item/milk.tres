@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_732a6"]
 script = ExtResource("2_eev2i")
-heal_amount = 10
+heal_amount = 1
 audio = ExtResource("3_l2kv3")
 use_description = ""
 

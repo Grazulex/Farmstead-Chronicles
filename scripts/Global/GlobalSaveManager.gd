@@ -9,9 +9,8 @@ var current_save : Dictionary = {
 	scene_path = "",
 	player = {
 		nickname = "",
-		hp = 100,
-		gold = 1,
-		wood = 1,
+		hp = 6,
+		max_hp = 6,
 		pos_x = 0,
 		pos_y = 0	
 	},
@@ -44,24 +43,18 @@ func load_game() -> void:
 	GlobalPlayerManager.set_player_position( Vector2( current_save.player.pos_x, current_save.player.pos_y ) )
 	GlobalPlayerManager.INVENTORY_DATA.parse_save_data( current_save.items )
 	
-
 	GlobalPlayerManager.set_player_nickname(current_save.player.nickname)
-	GlobalPlayerManager.set_player_healt(current_save.player.hp)
-	GlobalPlayerManager.player.wood = current_save.player.wood
-	GlobalPlayerManager.player.gold = current_save.player.gold
+	GlobalPlayerManager.set_player_healt(current_save.player.hp, current_save.player.max_hp)
 	
-	PlayerHud.update_all()
 	await GlobalLevelManager.level_loaded
 	game_loaded.emit()
-	print("load game")
 	pass
 	
 func update_player_data() -> void:
 	var p : Player	 = GlobalPlayerManager.player
 	current_save.player.nickname = p.nickname
 	current_save.player.hp = p.hp
-	current_save.player.gold = p.gold
-	current_save.player.wood = p.wood
+	current_save.player.max_hp = p.max_hp
 	current_save.player.pos_x = p.global_position.x
 	current_save.player.pos_y = p.global_position.y
 	pass

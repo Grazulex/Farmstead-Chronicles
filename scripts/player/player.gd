@@ -14,13 +14,14 @@ var direction : Vector2 = Vector2.ZERO
 @onready var state_machine : PlayerStateMachine = $StateMachine
 
 var nickname : String = "Nina"
-var hp : int = 100
-var wood : int = 0
-var gold : int = 0
+var hp : int = 2
+var max_hp : int = 6
 
 func _ready():
 	emit_signal("initialize_sprites")
 	state_machine.Initialize(self)
+	update_hp(0)
+	update_nickname( nickname )
 	pass
 	
 func _process(_delta):
@@ -61,22 +62,15 @@ func anim_direction() -> String:
 	if cardinal_direction == Vector2.DOWN:
 		return "down"
 	elif cardinal_direction == Vector2.UP:
-		return "up"
+		return "up"	
 	else:
 		return "side"
 		
 func update_nickname (new_nickname : String) -> void:
 	nickname = new_nickname
-	PlayerHud.refresh_nickname()		
+	PlayerHud.refresh_nickname( nickname )
 		
 func update_hp (delta : int) -> void:
-	hp += delta
-	PlayerHud.refresh_stock_hp()
-
-func update_wood (delta : int) -> void:
-	wood += delta
-	PlayerHud.refresh_stock_wood()
-
-func update_gold (delta : int) -> void:
-	gold += delta
-	PlayerHud.refresh_stock_gold()
+	hp  = clampi( hp + delta, 0, max_hp)
+	PlayerHud.update_hp( hp , max_hp )
+	pass

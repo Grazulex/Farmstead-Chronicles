@@ -1,36 +1,36 @@
 extends CanvasLayer
 
-@onready var label_name = $PanelContainer/VSplitContainer/LabelName
-@onready var label_wood = $PanelContainer/VSplitContainer/GridContainer/LabelWood
-@onready var label_gold = $PanelContainer/VSplitContainer/GridContainer/LabelGold
+@onready var label_name: Label = $Control/LabelName
 
+var hearts : Array[ HeartGUI ] = []
 
 func _ready():
-	label_name.text = GlobalPlayerManager.player.nickname
-	refresh_stock_gold()
-	refresh_stock_wood()
+	for child in $Control/HFlowContainer.get_children():
+		if child is HeartGUI:
+			hearts.append( child )
+			child.visible = false
 	pass
 	
-func _process(_delta):
+func refresh_nickname( _nickname : String) -> void:
+	label_name.text = _nickname
+	pass
+
+func update_hp( _hp: int, _max_hp : int ) -> void:
+	update_max_hp( _max_hp )
+	for i in _max_hp:
+		update_heart( i, _hp )
 	pass
 	
-func update_all() -> void :
-	refresh_stock_gold()
-	refresh_stock_wood()
-
-func refresh_stock_wood() -> void :
-	label_wood.text = str(GlobalPlayerManager.player.wood)
-	
-func refresh_stock_gold() -> void :
-	label_gold.text = str(GlobalPlayerManager.player.gold)
-
-func refresh_stock_hp() -> void:
-	print("show hp", str(GlobalPlayerManager.player.hp))
+func update_heart( _index: int, _hp : int ) -> void:
+	var _value : int = clampi( _hp - _index * 2, 0, 2 )
+	hearts[ _index ].value = _value
 	pass
 	
-func refresh_nickname() -> void:
-	label_name.text = str(GlobalPlayerManager.player.nickname)
-
-func _on_button_settings_pressed() -> void:
-	PauseMenu.show_pause_menu()
-	pass # Replace with function body.
+func update_max_hp( _max_hp : int ) -> void:
+	var _hear_count : int = roundi( _max_hp * 0.5 )
+	for i in hearts.size():
+		if i < _hear_count:
+			hearts[ i ].visible = true
+		else:
+			hearts[ i ].visible = false
+	pass

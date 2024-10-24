@@ -18,10 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalLevelManager="*res://scripts/Global/GlobalLevelManager.gd"
+PlayerHud="*res://scenes/ui/player_hud.tscn"
 GlobalPlayerManager="*res://scripts/Global/GlobalPlayerManager.gd"
 GlobalSaveManager="*res://scripts/Global/GlobalSaveManager.gd"
 SceneTransition="*res://scenes/ui/scene_transition/scene_transition.tscn"
-PlayerHud="*res://scenes/ui/player_hud.tscn"
 PauseMenu="*res://scenes/ui/menu/pause_menu.tscn"
 
 [display]

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="itemData" load_steps=4 format=3 uid="uid://b0f4w4mko5tbq"]
+[gd_resource type="Resource" script_class="itemData" load_steps=5 format=3 uid="uid://b0f4w4mko5tbq"]
 
+[ext_resource type="Script" path="res://scripts/item/item_effects/item_effect.gd" id="1_wsxhp"]
 [ext_resource type="Script" path="res://scripts/item/item_data.gd" id="1_wx3dj"]
 [ext_resource type="Texture2D" uid="uid://bntx7fx7qrmgt" path="res://assets/items/items-spritesheet.png" id="2_58h5h"]
 
@@ -12,3 +13,4 @@ script = ExtResource("1_wx3dj")
 name = "Wood"
 description = "Players can gather wood by chopping down pine trees. This wood is essential for completing various tasks and building structures on the farm."
 texture = SubResource("AtlasTexture_84gq8")
+effects = Array[ExtResource("1_wsxhp")]([])

@@ -1,7 +1,8 @@
 class_name Plant extends Node2D
 
+@export var item_data : itemData : set = _set_item_data
+
 @export var damage_to_dead: int = 3
-@export var stock_wood : int = 200
 @export var wood_sound : AudioStream	
 @export var player_state_name : String
 
@@ -35,8 +36,12 @@ func TakeDamage ( damage : int ) -> void:
 		await audio.finished
 		
 		if damage_to_dead <= 0 && is_cut == false:
-			is_cut = true
-			is_cut_data.set_value()
-			queue_free()	
-			GlobalPlayerManager.player.update_wood(stock_wood)
+			if GlobalPlayerManager.INVENTORY_DATA.add_item( item_data ) == true:
+				is_cut = true
+				is_cut_data.set_value()
+				queue_free()
 		pass
+
+func _set_item_data( value : itemData) -> void:
+	item_data = value
+	pass
