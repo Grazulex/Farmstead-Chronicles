@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://cel3hebtujgl0"]
+[gd_scene load_steps=57 format=4 uid="uid://cel3hebtujgl0"]
 
 [ext_resource type="Script" path="res://scripts/maps/level.gd" id="1_3f3gj"]
 [ext_resource type="Script" path="res://scripts/maps/tile_map.gd" id="1_udriu"]
@@ -28,6 +28,7 @@
 [ext_resource type="Resource" uid="uid://j30hgwl40hkj" path="res://resources/item/egg.tres" id="26_vsimf"]
 [ext_resource type="Resource" uid="uid://c1ltjerem6iie" path="res://resources/item/milk.tres" id="27_hdduv"]
 [ext_resource type="Resource" uid="uid://b0f4w4mko5tbq" path="res://resources/item/wood.tres" id="28_5pawu"]
+[ext_resource type="Script" path="res://scripts/maps/daynightcycle.gd" id="29_dna32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecp4m"]
 texture = ExtResource("2_2bf0t")
@@ -1878,6 +1879,13 @@ physics_layer_0/collision_layer = 16
 sources/0 = SubResource("TileSetAtlasSource_5p0u6")
 sources/1 = SubResource("TileSetAtlasSource_t6i37")
 
+[sub_resource type="Gradient" id="Gradient_x32gx"]
+offsets = PackedFloat32Array(0, 0.110041, 0.259972, 1)
+colors = PackedColorArray(0.344076, 0.344076, 0.344076, 1, 0.34663, 0.34663, 0.34663, 1, 0.748281, 0.748281, 0.748281, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dh6fy"]
+gradient = SubResource("Gradient_x32gx")
+
 [node name="Map01" type="Node2D"]
 script = ExtResource("1_3f3gj")
 
@@ -1964,3 +1972,9 @@ item_data = ExtResource("26_vsimf")
 [node name="ItemPickup3" parent="." instance=ExtResource("24_wudvg")]
 position = Vector2(-55, 217)
 item_data = ExtResource("27_hdduv")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("29_dna32")
+gradient_texture = SubResource("GradientTexture1D_dh6fy")
+INGAME_SPEED = 10.0
+INITIAL_HOUR = 8

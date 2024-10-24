@@ -12,5 +12,5 @@ func update_sprite() -> void:
 		sprite.frame = 2
 	elif value == 2:
 		sprite.frame = 0
-	else :
+	else:
 		sprite.frame = value 

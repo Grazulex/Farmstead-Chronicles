@@ -1,7 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0wh0px8d4me6"]
+[gd_scene load_steps=7 format=3 uid="uid://b0wh0px8d4me6"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_hud.gd" id="1_ubuar"]
+[ext_resource type="Texture2D" uid="uid://bibqd1yxdpdw8" path="res://assets/UI/Weather_UI.png" id="2_gawvv"]
 [ext_resource type="PackedScene" uid="uid://fgqyerup4put" path="res://scenes/ui/heart_gui.tscn" id="3_n022l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf5x8"]
+atlas = ExtResource("2_gawvv")
+region = Rect2(64, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rtjt"]
+atlas = ExtResource("2_gawvv")
+region = Rect2(336, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3o0s"]
+atlas = ExtResource("2_gawvv")
+region = Rect2(112, 0, 104, 64)
 
 [node name="PlayerHud" type="CanvasLayer"]
 layer = 2
@@ -15,23 +28,64 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Sprite2D2" type="Sprite2D" parent="Control"]
+position = Vector2(131, 54)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_pf5x8")
+flip_v = true
+
+[node name="SpriteArrow" type="Sprite2D" parent="Control"]
+position = Vector2(113, 54)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_2rtjt")
+centered = false
+offset = Vector2(0, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(95, 54)
+scale = Vector2(2.038, 2)
+texture = SubResource("AtlasTexture_d3o0s")
+region_rect = Rect2(8, 8, 104, 64)
+
+[node name="LabelDay" type="Label" parent="Control"]
+modulate = Color(1, 1, 1, 0.682353)
+layout_mode = 0
+offset_left = 33.0
+offset_top = 45.0
+offset_right = 76.0
+offset_bottom = 68.0
+text = "Day 1"
+horizontal_alignment = 1
+
+[node name="LabelHour" type="Label" parent="Control"]
+modulate = Color(1, 1, 1, 0.686275)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 65.0
+offset_right = 85.0
+offset_bottom = 114.0
+theme_override_font_sizes/font_size = 14
+text = "12:00 am"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="LabelName" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 961.0
-offset_top = 11.0
-offset_right = 1001.0
-offset_bottom = 34.0
-theme_override_font_sizes/font_size = 22
+offset_left = 966.0
+offset_top = 13.0
+offset_right = 1007.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 18
 text = "Nina"
 horizontal_alignment = 1
 
 [node name="HFlowContainer" type="HFlowContainer" parent="Control"]
 layout_mode = 0
-offset_left = 889.0
-offset_top = 35.0
-offset_right = 1089.0
-offset_bottom = 172.0
-theme_override_constants/h_separation = -2
+offset_left = 923.0
+offset_top = 38.0
+offset_right = 1053.0
+offset_bottom = 100.0
+theme_override_constants/h_separation = -8
 theme_override_constants/v_separation = -2
 alignment = 1
 
@@ -63,46 +117,4 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Heart10" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart11" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart12" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart13" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart14" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart15" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart16" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart17" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart18" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart19" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart20" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart21" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart22" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart23" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
-layout_mode = 2
-
-[node name="Heart24" parent="Control/HFlowContainer" instance=ExtResource("3_n022l")]
 layout_mode = 2

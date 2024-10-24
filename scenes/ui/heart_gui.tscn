@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://fgqyerup4put"]
 
 [ext_resource type="Script" path="res://scripts/ui/heart_gui.gd" id="1_1g2xt"]
-[ext_resource type="Texture2D" uid="uid://74cqkw1w6i2m" path="res://assets/UI/ALL UI ASSETS on one sheet.png" id="1_yrcsj"]
+[ext_resource type="Texture2D" uid="uid://fh3cdgot5s1o" path="res://assets/UI/Inventory_Spritesheet.png" id="2_p5kpu"]
 
 [node name="Heart" type="Control"]
 custom_minimum_size = Vector2(32, 32)
@@ -10,8 +10,8 @@ anchors_preset = 0
 script = ExtResource("1_1g2xt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_yrcsj")
+texture = ExtResource("2_p5kpu")
 centered = false
 hframes = 3
 region_enabled = true
-region_rect = Rect2(704, 800, 96, 32)
+region_rect = Rect2(0, 48, 96, 32)
