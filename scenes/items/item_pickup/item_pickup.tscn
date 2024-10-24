@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu636c2y0m67g"]
+[gd_scene load_steps=5 format=3 uid="uid://cu636c2y0m67g"]
 
 [ext_resource type="Script" path="res://scripts/item/item_pickup/item_pickup.gd" id="1_dmp36"]
 [ext_resource type="AudioStream" uid="uid://ih5ybb0r3ohc" path="res://assets/audio/Pickup.wav" id="2_vkger"]
+[ext_resource type="PackedScene" uid="uid://pab6smqn7ggf" path="res://scenes/general/PersistentDataHandler/persistent_data_handler.tscn" id="3_g7n67"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f24d0"]
 
@@ -17,3 +18,5 @@ shape = SubResource("CircleShape2D_f24d0")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_vkger")
+
+[node name="IsUse" parent="." instance=ExtResource("3_g7n67")]
