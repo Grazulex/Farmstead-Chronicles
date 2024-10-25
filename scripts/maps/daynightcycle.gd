@@ -18,17 +18,8 @@ signal time_tick(day:int, hour:int, minute:int)
 var time:float= 0.0
 var past_minute:int= -1
 
-var day : int
-var hour : int
-var minute : int
-
-
 func _ready() -> void:
-	day = GlobalPlayerManager.player.day
-	hour = GlobalPlayerManager.player.hour
-	minute = GlobalPlayerManager.player.minute
-	
-	time = INGAME_TO_REAL_MINUTE_DURATION * MINUTES_PER_HOUR * hour
+	time = INGAME_TO_REAL_MINUTE_DURATION * MINUTES_PER_HOUR * INITIAL_HOUR
 
 
 func _process(delta: float) -> void:
@@ -43,40 +34,15 @@ func _process(delta: float) -> void:
 func _recalculate_time() -> void:
 	var total_minutes = int(time / INGAME_TO_REAL_MINUTE_DURATION)
 	
-	day = int(total_minutes / MINUTES_PER_DAY)
-	GlobalPlayerManager.player.day = day
+	var day = int(total_minutes / MINUTES_PER_DAY)
 
 	var current_day_minutes = total_minutes % MINUTES_PER_DAY
 
-	hour = int(current_day_minutes / MINUTES_PER_HOUR)
-	GlobalPlayerManager.player.hour = hour
-	minute = int(current_day_minutes % MINUTES_PER_HOUR)
-	GlobalPlayerManager.player.minute = minute
+	var hour = int(current_day_minutes / MINUTES_PER_HOUR)
+	var minute = int(current_day_minutes % MINUTES_PER_HOUR)
 	
-	PlayerHud.update_day("Day " + str(day + 1))
-	PlayerHud.update_hour(_amfm_hour(hour) + ":" + _minute(minute) + " " + _am_pm(hour))	
-	PlayerHud.update_arrow( hour )
+	PlayerHud.update_timer(day, hour, minute)
 		
 	if past_minute != minute:
 		past_minute = minute
 		time_tick.emit(day, hour, minute)
-
-func _amfm_hour(hour:int) -> String:
-	if hour == 0:
-		return str(12)
-	if hour > 12:
-		return str(hour - 12)
-	return str(hour)
-
-
-func _minute(minute:int) -> String:
-	if minute < 10:
-		return "0" + str(minute)
-	return str(minute)
-
-
-func _am_pm(hour:int) -> String:
-	if hour < 12:
-		return "am"
-	else:
-		return "pm"

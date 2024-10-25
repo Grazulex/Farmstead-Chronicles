@@ -1879,12 +1879,15 @@ physics_layer_0/collision_layer = 16
 sources/0 = SubResource("TileSetAtlasSource_5p0u6")
 sources/1 = SubResource("TileSetAtlasSource_t6i37")
 
-[sub_resource type="Gradient" id="Gradient_x32gx"]
-offsets = PackedFloat32Array(0, 0.110041, 0.259972, 1)
-colors = PackedColorArray(0.344076, 0.344076, 0.344076, 1, 0.34663, 0.34663, 0.34663, 1, 0.748281, 0.748281, 0.748281, 1, 1, 1, 1, 1)
+[sub_resource type="Gradient" id="Gradient_myike"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.104762, 0.247619, 0.390476, 1)
+colors = PackedColorArray(0, 0, 0, 0.843137, 0.247059, 0.192157, 0.847059, 0.843137, 0.533333, 0.141176, 0.729412, 0.843137, 0.815686, 0.568627, 0.356863, 0.843137, 1, 1, 1, 0.843137)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_dh6fy"]
-gradient = SubResource("Gradient_x32gx")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l8mn1"]
+gradient = SubResource("Gradient_myike")
+width = 1250
+use_hdr = true
 
 [node name="Map01" type="Node2D"]
 script = ExtResource("1_3f3gj")
@@ -1975,6 +1978,6 @@ item_data = ExtResource("27_hdduv")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("29_dna32")
-gradient_texture = SubResource("GradientTexture1D_dh6fy")
-INGAME_SPEED = 10.0
+gradient_texture = SubResource("GradientTexture1D_l8mn1")
+INGAME_SPEED = 5.0
 INITIAL_HOUR = 8
