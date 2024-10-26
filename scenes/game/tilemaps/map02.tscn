@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bx4nuq5jyly0v"]
+[gd_scene load_steps=12 format=4 uid="uid://bx4nuq5jyly0v"]
 
 [ext_resource type="Script" path="res://scripts/maps/level.gd" id="1_d7leg"]
 [ext_resource type="PackedScene" uid="uid://blvh5h08qgtei" path="res://scenes/game/tilemaps/player_spawn.tscn" id="1_qjv3a"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dx66w0k28bnof" path="res://assets/textures/Tileset/Tileset Grass Summer copiar.png" id="2_kovwi"]
 [ext_resource type="Script" path="res://scripts/maps/tile_map.gd" id="2_vt4in"]
 [ext_resource type="PackedScene" uid="uid://bff4nctashc0j" path="res://scenes/game/level_transition.tscn" id="3_8trx5"]
+[ext_resource type="PackedScene" uid="uid://h6238iext1m4" path="res://scenes/general/day_night.tscn" id="7_dqccl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhkco"]
 texture = ExtResource("1_tysdp")
@@ -263,3 +264,5 @@ side = 1
 [node name="LevelTransition2" parent="." instance=ExtResource("3_8trx5")]
 position = Vector2(-472, 16)
 size = 3
+
+[node name="DayNight" parent="." instance=ExtResource("7_dqccl")]

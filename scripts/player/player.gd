@@ -17,8 +17,7 @@ var nickname : String = "Nina"
 var hp : int = 2
 var max_hp : int = 10
 var day : int = 0
-var hour : int = 8
-var minute : int = 0
+var hour : float = 0
 
 func _ready():
 	emit_signal("initialize_sprites")
