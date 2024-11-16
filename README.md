@@ -22,12 +22,12 @@
 ## Installation
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/farmstead-chronicles.git
-    ```
+	```bash
+	git clone https://github.com/Grazulex/Farmstead-Chronicles.git
+	```
 2. Open the project in Godot 4:
-    - Launch Godot 4 and select `Import` in the project manager.
-    - Navigate to the cloned project folder and open the `project.godot` file.
+	- Launch Godot 4 and select `Import` in the project manager.
+	- Navigate to the cloned project folder and open the `project.godot` file.
 3. Run the game by clicking the play button in the Godot editor.
 
 ## How to Play
@@ -40,8 +40,9 @@
 ## Controls
 
 - **WASD/Arrow Keys**: Move the character.
-- **Space**: Interact with objects (e.g., watering crops, feeding animals).
-- **E**: Open inventory/menu.
+- **Z**: Axe
+- **E**: Pick
+- **S**: Open inventory/menu.
 - **Esc**: Pause the game.
 
 ## Contributing
@@ -52,13 +53,13 @@ Contributions to improve **Farmstead Chronicles** are welcome! Whether you're fi
 
 1. Fork the repository.
 2. Create a new branch for your changes:
-    ```bash
-    git checkout -b feature-branch
-    ```
+	```bash
+	git checkout -b feature-branch
+	```
 3. Commit your changes and push the branch:
-    ```bash
-    git push origin feature-branch
-    ```
+	```bash
+	git push origin feature-branch
+	```
 4. Open a pull request.
 
 ## License
